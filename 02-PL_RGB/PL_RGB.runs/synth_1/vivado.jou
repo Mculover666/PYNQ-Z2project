@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri Oct 12 22:09:48 2018
+# Process ID: 8088
+# Current directory: F:/SOC/PYNQ-Z2/Project/02-PL_RGB/PL_RGB.runs/synth_1
+# Command line: vivado.exe -log PL_led.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PL_led.tcl
+# Log file: F:/SOC/PYNQ-Z2/Project/02-PL_RGB/PL_RGB.runs/synth_1/PL_led.vds
+# Journal file: F:/SOC/PYNQ-Z2/Project/02-PL_RGB/PL_RGB.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source PL_led.tcl -notrace

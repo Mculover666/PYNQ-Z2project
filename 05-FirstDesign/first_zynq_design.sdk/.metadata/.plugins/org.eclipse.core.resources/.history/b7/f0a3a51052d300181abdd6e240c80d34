@@ -1,0 +1,69 @@
+/**
+ *   @filename		led_bsp_mculover666.c
+ *   @brief				实现板载4颗LED驱动
+ *   @data				 2018/10/18
+ *   @author			Mculover666
+ */
+#include "led_bsp_mculover666.h"
+
+XGpio gpio;		//实例化一个Xgpio类型结构体
+
+/**
+ * @brief		LED IO初始化
+ * @param   none
+ * @retval		none
+ * */
+void led_init()
+{
+	/* 初始化XGpio */
+	XGpio_Initialize(&gpio, LED_XGpio_Device_ID);
+
+	/* 设置XGpio中LED所在引脚方向为输出 */
+	/* !!!注意:0-output 1-input !!! */
+	XGpio_SetDataDirection(&gpio, LED_XGpio_Channel, ~LED);
+
+	/* 默认输出低电平 */
+	XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED);
+}
+
+
+/* 定义LED单个操作函数 */
+void LED1_Statue(int statue)
+{
+	if(statue)
+		XGpio_DiscreteSet(&gpio, LED_XGpio_Channel, LED1);	//低电平点亮
+	else
+		XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED1);		//高电平点亮
+}
+void LED2_Statue(int statue)
+{
+	if(statue)
+		XGpio_DiscreteSet(&gpio, LED_XGpio_Channel, LED2);	//低电平点亮
+	else
+		XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED2);		//高电平点亮
+}
+void LED3_Statue(int statue)
+{
+	if(statue)
+		XGpio_DiscreteSet(&gpio, LED_XGpio_Channel, LED3);	//低电平点亮
+	else
+		XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED3);		//高电平点亮
+}
+void LED4_Statue(int statue)
+{
+	if(statue)
+		XGpio_DiscreteSet(&gpio, LED_XGpio_Channel, LED4);	//低电平点亮
+	else
+		XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED4);		//高电平点亮
+}
+
+/* 定义LED整体操作函数 */
+void LED_Statue(int statue)
+{
+	if(statue)
+		XGpio_DiscreteSet(&gpio, LED_XGpio_Channel, LED);	//低电平点亮
+	else
+		XGpio_DiscreteClear(&gpio, LED_XGpio_Channel, LED);		//高电平点亮
+}
+
+

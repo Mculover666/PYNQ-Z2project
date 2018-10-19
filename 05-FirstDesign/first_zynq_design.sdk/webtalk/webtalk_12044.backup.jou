@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# 
+# Start of session at: Thu Oct 18 23:09:29 2018
+# Process ID: 12044
+# Current directory: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/webtalk/webtalk.log
+# Journal file: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

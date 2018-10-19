@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="video_clock_synth_1" LaunchDir="F:/SOC/PYNQ-Z2/Project/03-PL_HDMI_OUT/PL_HDMI_OUT.runs/video_clock_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="F:/SOC/PYNQ-Z2/Project/03-PL_HDMI_OUT/PL_HDMI_OUT.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="video_clock_synth_1"/>
+	</Run>
+</Runs>
+

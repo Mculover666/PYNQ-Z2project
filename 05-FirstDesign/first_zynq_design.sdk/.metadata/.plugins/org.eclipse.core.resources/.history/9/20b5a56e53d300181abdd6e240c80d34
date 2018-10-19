@@ -1,0 +1,32 @@
+/**
+ *   @filename		led_bsp_mculover666.h
+ *   @brief				实现板载4颗LED驱动
+ *   @data				 2018/10/18
+ *   @author			Mculover666
+ */
+
+#ifndef LED_BSP_MCULOVER666_H_
+#define LED_BSP_MCULOVER666_H_
+
+#include "xgpio.h"
+#include "xparameters.h"
+
+#define ON								 1
+#define OFF								 0
+#define LED_XGpio_Device_ID  XPAR_GPIO_0_DEVICE_ID
+#define LED_XGpio_Channel	 2
+#define LED								 0x0000003F
+#define LED1							 0x00000001
+#define LED2							 0x00000002
+#define LED3							 0x00000004
+#define LED4							 0x00000008
+
+/* 初始化LED所在io */
+void led_init();
+void LED1_Statue(int statue);
+void LED2_Statue(int statue);
+void LED3_Statue(int statue);
+void LED4_Statue(int statue);
+void LED_Statue(int statue);
+
+#endif /* LED_BSP_MCULOVER666_H_ */

@@ -1,0 +1,694 @@
+22:54:52 INFO  : Registering command handlers for SDK TCF services
+22:54:53 INFO  : Launching XSCT server: xsct.bat -interactive F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\temp_xsdb_launch_script.tcl
+22:54:56 INFO  : XSCT server has started successfully.
+22:54:56 INFO  : Successfully done setting XSCT server connection channel  
+22:54:57 INFO  : Processing command line option -hwspec F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper.hdf.
+22:54:57 INFO  : Successfully done setting SDK workspace  
+22:57:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:57:27 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:57:27 INFO  : 'jtag frequency' command is executed.
+22:57:27 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:57:27 INFO  : Context for 'APU' is selected.
+22:57:27 INFO  : System reset is completed.
+22:57:30 INFO  : 'after 3000' command is executed.
+22:57:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:57:34 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+22:57:34 INFO  : Context for 'APU' is selected.
+22:57:34 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+22:57:34 INFO  : 'configparams force-mem-access 1' command is executed.
+22:57:34 INFO  : Context for 'APU' is selected.
+22:57:35 INFO  : 'ps7_init' command is executed.
+22:57:35 INFO  : 'ps7_post_config' command is executed.
+22:57:35 INFO  : 'configparams force-mem-access 0' command is executed.
+22:57:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:57:35 INFO  : Memory regions updated for context APU
+22:57:35 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+22:57:52 INFO  : Disconnected from the channel tcfchan#1.
+22:57:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:57:52 INFO  : 'fpga -state' command is executed.
+22:57:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:57:53 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:57:53 INFO  : 'jtag frequency' command is executed.
+22:57:53 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:57:53 INFO  : Context for 'APU' is selected.
+22:57:56 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+22:57:56 INFO  : 'configparams force-mem-access 1' command is executed.
+22:57:56 INFO  : Context for 'APU' is selected.
+22:57:56 INFO  : 'stop' command is executed.
+22:57:57 INFO  : 'ps7_init' command is executed.
+22:57:57 INFO  : 'ps7_post_config' command is executed.
+22:57:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:57:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:57:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:57:57 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:57:57 INFO  : 'configparams force-mem-access 0' command is executed.
+22:57:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:57:57 INFO  : Memory regions updated for context APU
+22:57:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:57:57 INFO  : 'con' command is executed.
+22:57:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:57:57 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+22:58:16 INFO  : Example project hello_bsp_xgpio_example_1 has been created successfully.
+22:58:42 INFO  : Disconnected from the channel tcfchan#2.
+22:58:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:58:44 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:58:44 INFO  : 'jtag frequency' command is executed.
+22:58:44 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:58:44 INFO  : Context for 'APU' is selected.
+22:58:44 INFO  : System reset is completed.
+22:58:47 INFO  : 'after 3000' command is executed.
+22:58:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:58:49 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+22:58:49 INFO  : Context for 'APU' is selected.
+22:58:52 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+22:58:52 INFO  : 'configparams force-mem-access 1' command is executed.
+22:58:52 INFO  : Context for 'APU' is selected.
+22:58:53 INFO  : 'ps7_init' command is executed.
+22:58:53 INFO  : 'ps7_post_config' command is executed.
+22:58:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:53 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:58:53 INFO  : 'configparams force-mem-access 0' command is executed.
+22:58:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:58:53 INFO  : Memory regions updated for context APU
+22:58:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:53 INFO  : 'con' command is executed.
+22:58:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:58:53 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+22:59:46 INFO  : Disconnected from the channel tcfchan#3.
+22:59:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:59:48 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:59:48 INFO  : 'jtag frequency' command is executed.
+22:59:48 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:59:48 INFO  : Context for 'APU' is selected.
+22:59:48 INFO  : System reset is completed.
+22:59:51 INFO  : 'after 3000' command is executed.
+22:59:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:59:53 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+22:59:53 INFO  : Context for 'APU' is selected.
+22:59:56 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+22:59:56 INFO  : 'configparams force-mem-access 1' command is executed.
+22:59:57 INFO  : Context for 'APU' is selected.
+22:59:57 INFO  : 'ps7_init' command is executed.
+22:59:57 INFO  : 'ps7_post_config' command is executed.
+22:59:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:59:57 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:59:57 INFO  : 'configparams force-mem-access 0' command is executed.
+22:59:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:59:57 INFO  : Memory regions updated for context APU
+22:59:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:59:58 INFO  : 'con' command is executed.
+22:59:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:59:58 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+23:01:10 INFO  : Disconnected from the channel tcfchan#4.
+23:01:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:01:12 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+23:01:12 INFO  : 'jtag frequency' command is executed.
+23:01:12 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:01:12 INFO  : Context for 'APU' is selected.
+23:01:12 INFO  : System reset is completed.
+23:01:15 INFO  : 'after 3000' command is executed.
+23:01:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+23:01:17 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+23:01:18 INFO  : Context for 'APU' is selected.
+23:01:21 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+23:01:21 INFO  : 'configparams force-mem-access 1' command is executed.
+23:01:21 INFO  : Context for 'APU' is selected.
+23:01:21 INFO  : 'ps7_init' command is executed.
+23:01:21 INFO  : 'ps7_post_config' command is executed.
+23:01:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:01:21 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:01:21 INFO  : 'configparams force-mem-access 0' command is executed.
+23:01:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello/Debug/hello.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:01:21 INFO  : Memory regions updated for context APU
+23:01:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:01:22 INFO  : 'con' command is executed.
+23:01:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+23:01:22 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello.elf_on_local.tcl'
+23:02:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+23:02:10 INFO  : 'fpga -state' command is executed.
+23:02:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:02:11 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+23:02:11 INFO  : 'jtag frequency' command is executed.
+23:02:11 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+23:02:11 INFO  : Context for 'APU' is selected.
+23:02:11 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+23:02:11 INFO  : 'configparams force-mem-access 1' command is executed.
+23:02:11 INFO  : Context for 'APU' is selected.
+23:02:11 INFO  : 'stop' command is executed.
+23:02:12 INFO  : 'ps7_init' command is executed.
+23:02:12 INFO  : 'ps7_post_config' command is executed.
+23:02:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:02:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:02:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:02:12 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello_bsp_xgpio_example_1/Debug/hello_bsp_xgpio_example_1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:02:12 INFO  : 'configparams force-mem-access 0' command is executed.
+23:02:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/hello_bsp_xgpio_example_1/Debug/hello_bsp_xgpio_example_1.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:02:12 INFO  : Memory regions updated for context APU
+23:02:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:02:12 INFO  : 'con' command is executed.
+23:02:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+23:02:12 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_hello_bsp_xgpio_example_1.elf_on_local.tcl'
+23:09:23 INFO  : Disconnected from the channel tcfchan#5.
+23:09:23 WARN  : channel "tcfchan#5" closed
+11:38:49 INFO  : Registering command handlers for SDK TCF services
+11:38:53 INFO  : Launching XSCT server: xsct.bat -interactive F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\temp_xsdb_launch_script.tcl
+11:39:07 INFO  : XSCT server has started successfully.
+11:39:07 INFO  : Successfully done setting XSCT server connection channel  
+11:39:16 INFO  : Successfully done setting SDK workspace  
+11:39:16 INFO  : Processing command line option -hwspec F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper.hdf.
+11:39:34 INFO  : Checking for hwspec changes in the project zynq_system_design_wrapper_hw_platform_0.
+11:44:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:44:55 INFO  : 'fpga -state' command is executed.
+11:44:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:44:59 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:44:59 INFO  : 'jtag frequency' command is executed.
+11:44:59 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:44:59 INFO  : Context for 'APU' is selected.
+11:44:59 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+11:44:59 INFO  : 'configparams force-mem-access 1' command is executed.
+11:44:59 INFO  : Context for 'APU' is selected.
+11:45:00 INFO  : 'stop' command is executed.
+11:45:00 INFO  : 'ps7_init' command is executed.
+11:45:00 INFO  : 'ps7_post_config' command is executed.
+11:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:01 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:45:01 INFO  : 'configparams force-mem-access 0' command is executed.
+11:45:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:45:01 INFO  : Memory regions updated for context APU
+11:45:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:01 INFO  : 'con' command is executed.
+11:45:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:45:01 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_bsp_mculover666.elf_on_local.tcl'
+11:45:27 INFO  : Disconnected from the channel tcfchan#1.
+11:45:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:45:28 INFO  : 'fpga -state' command is executed.
+11:45:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:45:33 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:45:33 INFO  : 'jtag frequency' command is executed.
+11:45:33 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:45:33 INFO  : Context for 'APU' is selected.
+11:45:40 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+11:45:40 INFO  : 'configparams force-mem-access 1' command is executed.
+11:45:40 INFO  : Context for 'APU' is selected.
+11:45:41 INFO  : 'stop' command is executed.
+11:45:41 INFO  : 'ps7_init' command is executed.
+11:45:41 INFO  : 'ps7_post_config' command is executed.
+11:45:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:45:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:42 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:45:42 INFO  : 'configparams force-mem-access 0' command is executed.
+11:45:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:45:42 INFO  : Memory regions updated for context APU
+11:45:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:42 INFO  : 'con' command is executed.
+11:45:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:45:42 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_bsp_mculover666.elf_on_local.tcl'
+11:45:52 INFO  : Disconnected from the channel tcfchan#2.
+11:45:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:45:54 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:45:54 INFO  : 'jtag frequency' command is executed.
+11:45:54 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:45:54 INFO  : Context for 'APU' is selected.
+11:45:54 INFO  : System reset is completed.
+11:45:57 INFO  : 'after 3000' command is executed.
+11:45:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:45:59 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+11:46:00 INFO  : Context for 'APU' is selected.
+11:46:05 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+11:46:05 INFO  : 'configparams force-mem-access 1' command is executed.
+11:46:05 INFO  : Context for 'APU' is selected.
+11:46:06 INFO  : 'ps7_init' command is executed.
+11:46:06 INFO  : 'ps7_post_config' command is executed.
+11:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:06 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:46:06 INFO  : 'configparams force-mem-access 0' command is executed.
+11:46:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:46:07 INFO  : Memory regions updated for context APU
+11:46:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:46:07 INFO  : 'con' command is executed.
+11:46:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:46:07 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_bsp_mculover666.elf_on_local.tcl'
+12:00:56 INFO  : Disconnected from the channel tcfchan#3.
+12:00:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:00:58 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:00:58 INFO  : 'jtag frequency' command is executed.
+12:00:58 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:00:58 INFO  : Context for 'APU' is selected.
+12:00:58 INFO  : System reset is completed.
+12:01:01 INFO  : 'after 3000' command is executed.
+12:01:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:01:04 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+12:01:04 INFO  : Context for 'APU' is selected.
+12:01:08 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:01:08 INFO  : 'configparams force-mem-access 1' command is executed.
+12:01:08 INFO  : Context for 'APU' is selected.
+12:01:09 INFO  : 'ps7_init' command is executed.
+12:01:09 INFO  : 'ps7_post_config' command is executed.
+12:01:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:01:09 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:01:09 INFO  : 'configparams force-mem-access 0' command is executed.
+12:01:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/led_bsp_mculover666/Debug/led_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:01:09 INFO  : Memory regions updated for context APU
+12:01:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:01:10 INFO  : 'con' command is executed.
+12:01:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:01:10 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_led_bsp_mculover666.elf_on_local.tcl'
+12:01:52 INFO  : Disconnected from the channel tcfchan#4.
+12:01:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:01:53 INFO  : 'fpga -state' command is executed.
+12:01:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:01:54 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:01:54 INFO  : 'jtag frequency' command is executed.
+12:01:54 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:01:54 INFO  : Context for 'APU' is selected.
+12:01:58 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:01:58 INFO  : 'configparams force-mem-access 1' command is executed.
+12:01:58 INFO  : Context for 'APU' is selected.
+12:01:58 INFO  : 'stop' command is executed.
+12:01:59 INFO  : 'ps7_init' command is executed.
+12:01:59 INFO  : 'ps7_post_config' command is executed.
+12:01:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:01:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:01:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:01:59 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:01:59 INFO  : 'configparams force-mem-access 0' command is executed.
+12:01:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:01:59 INFO  : Memory regions updated for context APU
+12:02:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:00 INFO  : 'con' command is executed.
+12:02:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:02:00 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_rgbled_bsp_mculover666.elf_on_local.tcl'
+12:02:40 INFO  : Disconnected from the channel tcfchan#5.
+12:02:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:02:41 INFO  : 'fpga -state' command is executed.
+12:02:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:02:42 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:02:42 INFO  : 'jtag frequency' command is executed.
+12:02:42 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:02:42 INFO  : Context for 'APU' is selected.
+12:02:46 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:02:46 INFO  : 'configparams force-mem-access 1' command is executed.
+12:02:46 INFO  : Context for 'APU' is selected.
+12:02:46 INFO  : 'stop' command is executed.
+12:02:47 INFO  : 'ps7_init' command is executed.
+12:02:47 INFO  : 'ps7_post_config' command is executed.
+12:02:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:02:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:47 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:02:47 INFO  : 'configparams force-mem-access 0' command is executed.
+12:02:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:02:47 INFO  : Memory regions updated for context APU
+12:02:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:02:48 INFO  : 'con' command is executed.
+12:02:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:02:48 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_rgbled_bsp_mculover666.elf_on_local.tcl'
+12:03:35 INFO  : Disconnected from the channel tcfchan#6.
+12:03:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:03:36 INFO  : 'fpga -state' command is executed.
+12:03:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:03:42 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:03:42 INFO  : 'jtag frequency' command is executed.
+12:03:42 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:03:42 INFO  : Context for 'APU' is selected.
+12:03:46 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:03:46 INFO  : 'configparams force-mem-access 1' command is executed.
+12:03:46 INFO  : Context for 'APU' is selected.
+12:03:47 INFO  : 'stop' command is executed.
+12:03:47 INFO  : 'ps7_init' command is executed.
+12:03:47 INFO  : 'ps7_post_config' command is executed.
+12:03:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:03:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:03:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:03:47 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:03:47 INFO  : 'configparams force-mem-access 0' command is executed.
+12:03:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:03:47 INFO  : Memory regions updated for context APU
+12:03:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:03:48 INFO  : 'con' command is executed.
+12:03:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:03:48 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_rgbled_bsp_mculover666.elf_on_local.tcl'
+12:04:01 INFO  : Disconnected from the channel tcfchan#7.
+12:04:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:04:02 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:04:02 INFO  : 'jtag frequency' command is executed.
+12:04:02 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:04:02 INFO  : Context for 'APU' is selected.
+12:04:02 INFO  : System reset is completed.
+12:04:05 INFO  : 'after 3000' command is executed.
+12:04:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:04:08 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+12:04:08 INFO  : Context for 'APU' is selected.
+12:04:12 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:04:12 INFO  : 'configparams force-mem-access 1' command is executed.
+12:04:12 INFO  : Context for 'APU' is selected.
+12:04:13 INFO  : 'ps7_init' command is executed.
+12:04:13 INFO  : 'ps7_post_config' command is executed.
+12:04:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:13 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:04:13 INFO  : 'configparams force-mem-access 0' command is executed.
+12:04:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:04:13 INFO  : Memory regions updated for context APU
+12:04:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:13 INFO  : 'con' command is executed.
+12:04:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:04:13 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_rgbled_bsp_mculover666.elf_on_local.tcl'
+12:05:34 INFO  : Disconnected from the channel tcfchan#8.
+12:05:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:05:35 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:05:35 INFO  : 'jtag frequency' command is executed.
+12:05:35 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+12:05:35 INFO  : Context for 'APU' is selected.
+12:05:35 INFO  : System reset is completed.
+12:05:38 INFO  : 'after 3000' command is executed.
+12:05:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+12:05:41 INFO  : FPGA configured successfully with bitstream "F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit"
+12:05:41 INFO  : Context for 'APU' is selected.
+12:05:44 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf'.
+12:05:44 INFO  : 'configparams force-mem-access 1' command is executed.
+12:05:44 INFO  : Context for 'APU' is selected.
+12:05:44 INFO  : 'ps7_init' command is executed.
+12:05:44 INFO  : 'ps7_post_config' command is executed.
+12:05:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:44 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:05:45 INFO  : 'configparams force-mem-access 0' command is executed.
+12:05:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1
+fpga -file F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/zynq_system_design_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/zynq_system_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.sdk/rgbled_bsp_mculover666/Debug/rgbled_bsp_mculover666.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:05:45 INFO  : Memory regions updated for context APU
+12:05:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:05:45 INFO  : 'con' command is executed.
+12:05:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+12:05:45 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\05-FirstDesign\first_zynq_design.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_rgbled_bsp_mculover666.elf_on_local.tcl'
+12:06:35 INFO  : Disconnected from the channel tcfchan#9.

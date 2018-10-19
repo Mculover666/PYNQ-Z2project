@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Oct 18 22:36:27 2018
+# Process ID: 11260
+# Current directory: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.runs/synth_1
+# Command line: vivado.exe -log zynq_system_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source zynq_system_design_wrapper.tcl
+# Log file: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.runs/synth_1/zynq_system_design_wrapper.vds
+# Journal file: F:/SOC/PYNQ-Z2/Project/05-FirstDesign/first_zynq_design.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source zynq_system_design_wrapper.tcl -notrace

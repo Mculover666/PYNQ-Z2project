@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="video_clock_synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1539355513">
+  <File Type="PA-TCL" Name="video_clock.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="video_clock_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="video_clock_reports.tcl"/>
+  <File Type="RDS-RDS" Name="video_clock.vds"/>
+  <File Type="RDS-UTIL" Name="video_clock_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="video_clock_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="video_clock.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="video_clock_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="video_clock_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/video_clock">
+    <File Path="$PSRCDIR/sources_1/ip/video_clock/video_clock.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="video_clock"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/video_clock">
+    <File Path="$PSRCDIR/sources_1/ip/video_clock/video_clock.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="video_clock"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

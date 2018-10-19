@@ -1,0 +1,174 @@
+16:30:44 INFO  : Registering command handlers for SDK TCF services
+16:30:48 INFO  : Launching XSCT server: xsct.bat -interactive F:\SOC\PYNQ-Z2\Project\04-PS_HELLO\PS_HELLO.sdk\temp_xsdb_launch_script.tcl
+16:30:56 INFO  : XSCT server has started successfully.
+16:31:13 INFO  : Successfully done setting XSCT server connection channel  
+16:31:13 INFO  : Processing command line option -hwspec F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper.hdf.
+16:31:13 INFO  : Successfully done setting SDK workspace  
+16:37:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:37:55 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+16:37:55 INFO  : 'jtag frequency' command is executed.
+16:37:55 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:37:55 INFO  : Context for 'APU' is selected.
+16:37:55 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf'.
+16:37:55 INFO  : 'configparams force-mem-access 1' command is executed.
+16:37:55 INFO  : Context for 'APU' is selected.
+16:37:55 INFO  : 'stop' command is executed.
+16:37:56 INFO  : 'ps7_init' command is executed.
+16:37:56 INFO  : 'ps7_post_config' command is executed.
+16:37:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:56 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:37:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:56 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:37:56 INFO  : 'configparams force-mem-access 0' command is executed.
+16:37:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:37:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:57 INFO  : 'con' command is executed.
+16:37:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+16:37:57 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\04-PS_HELLO\PS_HELLO.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+16:40:15 INFO  : Disconnected from the channel tcfchan#1.
+16:40:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:40:16 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+16:40:16 INFO  : 'jtag frequency' command is executed.
+16:40:16 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:40:16 INFO  : Context for 'APU' is selected.
+16:40:20 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf'.
+16:40:20 INFO  : 'configparams force-mem-access 1' command is executed.
+16:40:20 INFO  : Context for 'APU' is selected.
+16:40:20 INFO  : 'stop' command is executed.
+16:40:21 INFO  : 'ps7_init' command is executed.
+16:40:21 INFO  : 'ps7_post_config' command is executed.
+16:40:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:40:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:21 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:40:21 INFO  : 'configparams force-mem-access 0' command is executed.
+16:40:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:40:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:22 INFO  : 'con' command is executed.
+16:40:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+16:40:22 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\04-PS_HELLO\PS_HELLO.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+19:13:25 INFO  : Disconnected from the channel tcfchan#2.
+19:13:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:13:27 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+19:13:27 INFO  : 'jtag frequency' command is executed.
+19:13:27 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:13:27 INFO  : Context for 'APU' is selected.
+19:13:32 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf'.
+19:13:32 INFO  : 'configparams force-mem-access 1' command is executed.
+19:13:32 INFO  : Context for 'APU' is selected.
+19:13:32 INFO  : 'stop' command is executed.
+19:13:33 INFO  : 'ps7_init' command is executed.
+19:13:33 INFO  : 'ps7_post_config' command is executed.
+19:13:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:13:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:13:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:13:33 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:13:33 INFO  : 'configparams force-mem-access 0' command is executed.
+19:13:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:13:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:13:34 INFO  : 'con' command is executed.
+19:13:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+19:13:34 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\04-PS_HELLO\PS_HELLO.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+19:30:09 INFO  : Disconnected from the channel tcfchan#3.
+19:30:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:30:10 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+19:30:10 INFO  : 'jtag frequency' command is executed.
+19:30:10 INFO  : Sourcing of 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:30:10 INFO  : Context for 'APU' is selected.
+19:30:15 INFO  : Hardware design information is loaded from 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf'.
+19:30:15 INFO  : 'configparams force-mem-access 1' command is executed.
+19:30:15 INFO  : Context for 'APU' is selected.
+19:30:15 INFO  : 'stop' command is executed.
+19:30:16 INFO  : 'ps7_init' command is executed.
+19:30:16 INFO  : 'ps7_post_config' command is executed.
+19:30:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:30:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:30:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:30:16 INFO  : The application 'F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:30:16 INFO  : 'configparams force-mem-access 0' command is executed.
+19:30:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/ps_hello_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:30:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:30:16 INFO  : 'con' command is executed.
+19:30:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+19:30:16 INFO  : Launch script is exported to file 'F:\SOC\PYNQ-Z2\Project\04-PS_HELLO\PS_HELLO.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+19:56:33 INFO  : Disconnected from the channel tcfchan#4.

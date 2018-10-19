@@ -1,0 +1,8 @@
+12:00:52 **** Incremental Build of configuration Debug for project led_bsp_mculover666 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+
+12:00:53 Build Finished (took 539ms)
+

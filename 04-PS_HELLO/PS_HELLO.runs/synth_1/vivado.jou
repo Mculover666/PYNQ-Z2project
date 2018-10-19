@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sun Oct 14 16:17:42 2018
+# Process ID: 2808
+# Current directory: F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.runs/synth_1
+# Command line: vivado.exe -log ps_hello_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ps_hello_wrapper.tcl
+# Log file: F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.runs/synth_1/ps_hello_wrapper.vds
+# Journal file: F:/SOC/PYNQ-Z2/Project/04-PS_HELLO/PS_HELLO.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ps_hello_wrapper.tcl -notrace
